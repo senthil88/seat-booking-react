@@ -9,8 +9,8 @@ const Seat = (props) => {
     <>
       <Row className='screen'>
         <Col className="text-center">
-          SCREEN THIS WAY
-            </Col>
+          <h4> SCREEN THIS WAY </h4>
+        </Col>
       </Row>
 
       <Row className='cabin'>

@@ -36,6 +36,8 @@ const Movie = () => {
 
   const sortAvailableSeat = (seats, pivot) => {
     let sortSeats = {};
+
+    // 1st Priority: Closest to the front
     for (var key in seats) {
       if (!sortSeats[seats[key].row]) {
         sortSeats[seats[key].row] = []
@@ -43,6 +45,7 @@ const Movie = () => {
       sortSeats[seats[key].row].push(seats[key].column)
     }
 
+    // 2nd Priority: Middle Seat
     for (var seat in sortSeats) {
       sortSeats[seat].sort((a, b) => Math.abs(a - pivot) - Math.abs(b - pivot) || b - a);
     }
@@ -54,6 +57,7 @@ const Movie = () => {
     let availableSeats = Object.keys(data.seats)
     let layout = []
 
+    // PREPARE: ROWS
     times(data.venue.layout.rows, (currentRow) => {
       let alphapet = String.fromCharCode(currentRow + 97)
       let singleRow = {
@@ -61,6 +65,7 @@ const Movie = () => {
         columns: []
       }
 
+      // PREPARE: COLUMNS
       times(data.venue.layout.columns, (currentColumn) => {
         singleRow.columns.push({
           isAvailable: availableSeats.includes(alphapet + (currentColumn + 1)),
@@ -116,7 +121,6 @@ const Movie = () => {
             <button onClick={loadDynamicJson}>Load</button>
           </Modal.Footer>
         </Modal>
-
       </>
     );
   } else {

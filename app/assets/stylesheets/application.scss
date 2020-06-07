@@ -17,39 +17,39 @@
 @import "bootstrap/scss/bootstrap.scss";
 
 .dot {
-    height: 35px;
-    width: 35px;
-    min-width: 35px;
-    background-color: #868686;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 6px 3px;
-    cursor: pointer;
+  height: 35px;
+  width: 35px;
+  min-width: 35px;
+  background-color: #868686;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 6px 3px;
+  cursor: pointer;
 }
 
 .dot.booked {
-    background-color: #ff6969;
+  background-color: #ff6969;
 }
 
 .cabin {
-    border: 5px solid #d8d8d8;
-    overflow-x: scroll;
+  border: 5px solid #d8d8d8;
+  overflow-x: scroll;
 }
 
 .screen {
-    border: 5px solid #d8d8d8;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    padding: 10px;
-    background-color: darkslategrey;
-    color: white;
+  border: 5px solid #d8d8d8;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  padding: 30px;
+  background-color: darkslategrey;
+  color: white;
 }
 
 .single-row {
-    flex-wrap: nowrap;
-    overflow-x: scroll;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 
 .nowrap {
-    flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
 }

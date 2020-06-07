@@ -1,24 +1,23 @@
-# README
+# Technology
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby on Rails
 
-Things you may want to cover:
+* React
 
-* Ruby version
+* Bootstrap - CSS
 
-* System dependencies
-
-* Configuration
+* Postgresql
 
 * Database creation
 
-* Database initialization
+# Deployment Cloud
 
-* How to run the test suite
+* Heroku
 
-* Services (job queues, cache servers, search engines, etc.)
+# Deployment instructions
 
-* Deployment instructions
+* heroku login
 
-* ...
+* git push heroku master
+
+* https://devcenter.heroku.com/articles/getting-started-with-rails6
