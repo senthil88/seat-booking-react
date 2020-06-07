@@ -1,0 +1,31 @@
+{
+  "name": "seat_booking",
+  "private": true,
+  "dependencies": {
+    "@babel/preset-react": "^7.10.1",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "axios": "^0.19.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "^4.5.0",
+    "install": "^0.13.0",
+    "konva": "^6.0.0",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
+    "react-konva": "^16.13.0-3",
+    "react-router-dom": "^5.2.0",
+    "react_ujs": "^2.6.1",
+    "turbolinks": "^5.2.0",
+    "underscore": "^1.10.2",
+    "yarn": "^1.22.4"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
+}
