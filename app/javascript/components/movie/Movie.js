@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Row, Col } from 'react-bootstrap'
 import Seat from 'components/seat/Seat';
 const axios = require('axios');
-import times from 'lodash/times' //  2.08kB! :)
+import times from 'lodash/times'
+import { maxBy } from 'lodash';
 import Modal from 'react-bootstrap/Modal'
 
 const Movie = () => {
@@ -14,12 +15,15 @@ const Movie = () => {
     "venue": { "layout": { "rows": 10, "columns": 50 } },
     "seats": {
       "a1": { "id": "a1", "row": "a", "column": 1, "status": "AVAILABLE" },
+      "a25": { "id": "a25", "row": "a", "column": 25, "status": "AVAILABLE" },
       "b5": { "id": "b5", "row": "b", "column": 5, "status": "AVAILABLE" },
+      "d16": { "id": "d16", "row": "d", "column": 16, "status": "AVAILABLE" },
       "h7": {
         "id": "h7", "row": "h", "column": 7, "status": "AVAILABLE"
       }
     }
   })
+  const [pivot, setPivot] = useState(0)
 
   useEffect(() => {
     loadMovieSet('set1');
@@ -28,6 +32,7 @@ const Movie = () => {
   const loadMovieSet = (set) => {
     axios.get('api/v1/' + set).then(function (response) {
       let pivot = response.data.venue.layout.columns / 2;
+      setPivot(pivot)
       processLayout(response.data);
       sortAvailableSeat(response.data.seats, pivot);
     }).catch(function (error) {
@@ -81,8 +86,19 @@ const Movie = () => {
   }
 
   const bestSeat = () => {
-    let firstKey = Object.keys(sortedAvailableSeats)[0];
-    alert(firstKey + sortedAvailableSeats[firstKey][0])
+    let possibleSeat = [];
+
+    for (var seat in sortedAvailableSeats) {
+      sortedAvailableSeats[seat].forEach(function (element) {
+        let middleRange = element / pivot
+        if (middleRange > 1)
+          middleRange = parseFloat((1 - (middleRange % 1)).toFixed(2))
+        possibleSeat.push({ row: seat, pivot: middleRange, seat: element })
+      })
+    }
+
+    let bestSeat = maxBy(possibleSeat, o => o.pivot)
+    alert(bestSeat.row + bestSeat.seat)
   }
 
   const showModal = () => {
