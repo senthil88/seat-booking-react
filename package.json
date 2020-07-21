@@ -12,7 +12,7 @@
     "bootstrap": "^4.5.0",
     "install": "^0.13.0",
     "konva": "^6.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
