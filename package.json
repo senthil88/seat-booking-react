@@ -21,7 +21,7 @@
     "react-router-dom": "^5.2.0",
     "react_ujs": "^2.6.1",
     "turbolinks": "^5.2.0",
-    "underscore": "^1.10.2",
+    "underscore": "^1.12.1",
     "yarn": "^1.22.4"
   },
   "version": "0.1.0",
